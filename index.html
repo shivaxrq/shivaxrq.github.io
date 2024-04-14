@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İndirme Butonu</title>
+    <style>
+        /* Video konteynerinin stilini belirle */
+        #video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; /* Butonun üzerine gelmemesi için */
+        }
+
+        /* Video stilini belirle */
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* İndirme butonu stilini belirle */
+        .indirme-butonu {
+            background-color: #FF0000; /* Kırmızı renk */
+            border: none;
+            color: white; /* Beyaz yazı rengi */
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: auto; /* Ortalamak için */
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Ortalamak için */
+            border-radius: 8px; /* Köşeleri yuvarla */
+            cursor: pointer;
+            z-index: 1; /* Video üzerinde olmalı */
+        }
+
+        /* İndirme butonunun hover özelliği */
+        .indirme-butonu:hover {
+            background-color: #CC0000; /* Koyu kırmızı renk */
+        }
+
+        /* Discord butonu stilini belirle */
+        .discord-butonu {
+            background-color: #7289DA; /* Discord mavisi */
+            border: none;
+            color: white; /* Beyaz yazı rengi */
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px; /* İndirme butonundan biraz aşağı */
+            border-radius: 8px; /* Köşeleri yuvarla */
+            cursor: pointer;
+            z-index: 1; /* Video üzerinde olmalı */
+            position: absolute;
+            top: 50%; /* Dikeyde ortala */
+            left: 50%; /* Yatayda ortala */
+            transform: translate(-50%, -50%); /* Ortalamak için */
+        }
+
+        /* Discord butonunun hover özelliği */
+        .discord-butonu:hover {
+            background-color: #5B6E91; /* Koyu discord mavisi */
+        }
+
+        /* Discord logo stilini belirle */
+        .discord-logo {
+            vertical-align: middle;
+            margin-right: 5px; /* Logo ile metin arasına biraz boşluk bırak */
+            width: 20px; /* Logo boyutunu küçült */
+        }
+
+        /* Açıklama yazısının stilini belirle */
+        .aciklama {
+            color: white; /* Beyaz yazı rengi */
+            font-size: 20px;
+            text-align: center;
+            margin-top: 50px; /* Videonun altına yerleştir */
+        }
+
+        /* Alt menü stilini belirle */
+        .alt-menu {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Alt menü içindeki butonların stilini belirle */
+        .alt-buton {
+            background-color: #7289DA;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 0 10px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Alt menü içindeki butonların hover özelliği */
+        .alt-buton:hover {
+            background-color: #5B6E91;
+        }
+
+        /* Body arka plan rengini siyah yap */
+        body {
+            background-color: black;
+            margin: 0; /* Sayfa kenar boşluklarını kaldır */
+            overflow: hidden; /* Sayfa scroll olmamalı */
+        }
+    </style>
+</head>
+<body>
+
+<div id="video-container">
+    <video autoplay loop muted>
+        <source src="video.mp4" type="video/mp4">
+        Video desteklenmiyor.
+    </video>
+</div>
+
+<div class="aciklama">
+    Hileyi indirmek için aşağıdaki indir butonuna bas
+</div>
+
+<button class="indirme-butonu" onclick="indir()">İndir</button>
+
+<button class="discord-butonu" onclick="discord()">
+    Discord Adresimiz
+</button>
+
+<div class="alt-menu">
+    <button class="alt-buton" onclick="anaSayfa()">Home</button>
+    <button class="alt-buton" onclick="sSS()">FAQ</button>
+</div>
+
+<script>
+    function indir() {
+        window.location.href = "https://dosya.co/tbs4ewh9up3r/Wenza_Loading.zip.html";
+    }
+
+    function discord() {
+        window.location.href = "https://discord.gg/XejVDFqMP3";
+    }
+
+    function anaSayfa() {
+        window.location.href = "index.html";
+    }
+
+    function sSS() {
+        window.location.href = "faq.html";
+    }
+</script>
+
+</body>
+</html>
