@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OTP Generator</title>
-</head>
-<body>
-    <h1>OTP Generator</h1>
-    <button onclick="generateOTP()">Generate OTP</button>
-    <p id="otpDisplay"></p>
-
+    <title>OTP Code Verification</title>
     <script>
-        function generateOTP() {
-            var otp = '';
-            for (var i = 0; i < 6; i++) {
-                otp += Math.floor(Math.random() * 10); // 0 ile 9 arasında rastgele bir sayı ekler
+        function verifyCode() {
+            const userCode = document.getElementById("otpCode").value;
+            const serverCode = "123456"; // Bu kod normalde bir sunucu tarafından sağlanır ve her kullanıcı için benzersiz olmalıdır.
+            
+            if (userCode === serverCode) {
+                alert("Verification successful!");
+                // Burada başarılı doğrulama sonrası işlemleri yürütebilirsiniz.
+            } else {
+                alert("Invalid OTP code. Please try again.");
             }
-            document.getElementById('otpDisplay').innerHTML = 'Generated OTP: ' + otp;
         }
     </script>
+</head>
+<body>
+    <h1>OTP Code Verification</h1>
+    <p>Please enter the OTP code you received:</p>
+    <input type="text" id="otpCode" placeholder="Enter OTP code here">
+    <button onclick="verifyCode()">Verify Code</button>
 </body>
 </html>
