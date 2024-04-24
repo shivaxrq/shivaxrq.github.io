@@ -1,7 +1,23 @@
-<div class="container">
-			<center>
-				<button class="btn" onclick="Generate()">Generate Code</button>
-				<p class="notice">Your Random Code Will Generate Here!</p>
-				<p id="area"><span id="display1"></span><span id="display2"></span><span id="display3"></span><span id="display4"></span><span id="display5"></span><span id="display6"></span></p>
-  </center>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Generator</title>
+</head>
+<body>
+    <h1>OTP Generator</h1>
+    <button onclick="generateOTP()">Generate OTP</button>
+    <p id="otpDisplay"></p>
+
+    <script>
+        function generateOTP() {
+            var otp = '';
+            for (var i = 0; i < 6; i++) {
+                otp += Math.floor(Math.random() * 10); // 0 ile 9 arasında rastgele bir sayı ekler
+            }
+            document.getElementById('otpDisplay').innerHTML = 'Generated OTP: ' + otp;
+        }
+    </script>
+</body>
+</html>
